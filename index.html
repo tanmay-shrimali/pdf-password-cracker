@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>PDF Password Cracker</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>PDF Password Cracker</h1>
+    
+    <!-- Section 1: PDF Upload -->
+    <section id="pdf-upload-section">
+      <h2>Step 1: Upload PDF</h2>
+      <div class="upload-section">
+        <label for="pdf-file-input" class="upload-label">
+          <span>Drag and drop your PDF file here</span>
+          <span>or </span>
+          <input class="browse-btn" type="file" id="pdf-file-input" accept=".pdf">
+        </label>
+      </div>
+      <div id="pdf-password-alert" class="alert-box"></div>
+    </section>
+    
+    <!-- Section 2: Wordlist Upload -->
+    <section id="wordlist-upload-section">
+      <h2>Step 2: Upload Wordlist</h2>
+      <div class="upload-section">
+        <label for="wordlist-file-input" class="upload-label">
+          <span>Drag and drop your wordlist file here</span>
+          <span>or </span>
+          <input class="browse-btn" type="file" id="wordlist-file-input" accept=".txt">
+        </label>
+      </div>
+      <div id="wordlist-alert" class="alert-box"></div>
+    </section>
+    
+    <!-- Section 3: Password Crack -->
+    <section id="crack-password-section">
+      <h2>Step 3: Crack Password</h2>
+      <div id="password-crack">
+        <button id="crack-btn">Crack Password</button>
+      </div>
+      <div id="crack-alert" class="alert-box"></div>
+    </section>
+    
+    <!-- Section 4: Password Display -->
+    <section id="password-display-section">
+      <h2>Password Found:</h2>
+      <div id="password"></div>
+      <button id="copy-password-btn">Copy Password</button>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Initialize PDF.js
+    PDFJS.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
+  </script>
+  
+
+</body>
+</html>
